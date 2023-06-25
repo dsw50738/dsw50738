@@ -20,6 +20,12 @@ do
     echo "Nazwa skryptu: skrypt.sh" >> "$filename"
     echo "Data: $(date)" >> "$filename"
 done
+elif [ $1 == "--help" ];
+then
+echo "--date  <wyświetla datel>"
+echo "--logs <tworzy 100plików tekstowych>"
+echo "--logs30 <tworzy 30plików tekstowych>"
+echo "--help <wyświetla liste argumentów>"
 else
 	echo "podaj argument"
 fi
