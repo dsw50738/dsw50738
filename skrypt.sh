@@ -4,14 +4,21 @@ then
 date
 elif [ $1 == "--logs" ];
 then
-x=1
-
-while [ $x -le 100 ]
+for ((i=1; i<=100; i++))
 do
-filename="log${x}.txt"
-touch "$filename"
-echo "Utworzono plik $filename"
-x=$((x+1))
+    filename="log${i}.txt"
+    echo "Nazwa pliku: $filename" > "$filename"
+    echo "Nazwa skryptu: skrypt.sh" >> "$filename"
+    echo "Data: $(date)" >> "$filename"
+done
+elif [ $1 == "--logs30" ];
+then
+for ((i=1; i<=30; i++))
+do
+    filename="log${i}.txt"
+    echo "Nazwa pliku: $filename" > "$filename"
+    echo "Nazwa skryptu: skrypt.sh" >> "$filename"
+    echo "Data: $(date)" >> "$filename"
 done
 else
 	echo "podaj argument"
